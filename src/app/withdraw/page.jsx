@@ -118,17 +118,23 @@ const Page = () => {
   }, []);
   return (
     <main className="max-w-[96%] px-4 mx-auto">
-      <Link
-        href={"/"}
-        className="flex gap-1 items-center mt-8 text-white hover:underline text-sm"
-      >
-        <ChevronLeft /> Back To Home
-      </Link>
-      <div className="flex justify-between items-center bg-[#04073B] text-white shadow rounded-lg p-4 mt-4">
-        <h2>History</h2>
-        <div className="flex gap-1 items-center">
-          <Image src="/coin.png" width={30} height={50} alt="coin" />
-          <span className="text-4xl">0</span>
+      <div className="flex justify-between items-center mt-8">
+        <Link
+          href={"/"}
+          className="flex gap-1 items-center  text-white hover:underline text-sm"
+        >
+          <ChevronLeft /> Back To Home
+        </Link>
+        <div className="flex justify-end ">
+          <Link href={"/withdraw/history"}>
+            <h2 className=" bg-[#04073B] text-white shadow rounded-lg p-4 ">
+              Check History
+            </h2>
+          </Link>
+          {/* <div className="flex gap-1 items-center">
+            <Image src="/coin.png" width={30} height={50} alt="coin" />
+            <span className="text-4xl">0</span>
+          </div> */}
         </div>
       </div>
       <span className="w-full mt-8 inline-block h-1 bg-[#04073B]"></span>
