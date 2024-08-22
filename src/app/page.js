@@ -1,14 +1,12 @@
 "use client";
 
 import Click from "@/components/click";
-
 import { useAuth } from "@/hooks/useAuth";
 import axios from "axios";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import toast, { Toaster } from "react-hot-toast";
-
 import dynamic from "next/dynamic";
 
 const SpinWheel = dynamic(() => import("@/components/wheel"), {
@@ -85,6 +83,13 @@ export default function Home() {
     });
   };
 
+  const formatCoins = (value) => {
+    if (value >= 1000) {
+      return (value / 1000).toFixed(1) + "K"; // Abbreviates large numbers
+    }
+    return value;
+  };
+
   useEffect(() => {
     if (user) {
       getCoins();
@@ -138,25 +143,13 @@ export default function Home() {
           {user && (
             <div className="flex gap-1 items-center">
               <Image src="/coin.png" width={30} height={50} alt="coin" />
-              {user && (
-                <span className={loading ? "text-sm" : "text-4xl"}>
-                  {loading ? "Loading..." : coins}
-                </span>
-              )}
+              <span className={loading ? "text-sm" : "text-4xl"}>
+                {loading ? "Loading..." : formatCoins(coins)}
+              </span>
             </div>
           )}
         </div>
         <div className="flex gap-1 items-center">
-          {!user && (
-            <div className="flex gap-1 items-center">
-              <Image src="/coin.png" width={30} height={50} alt="coin" />
-              {user && (
-                <span className={loading ? "text-sm" : "text-4xl"}>
-                  {loading ? "Loading..." : coins}
-                </span>
-              )}
-            </div>
-          )}
           {user && (
             <Click>
               <Link
@@ -174,11 +167,18 @@ export default function Home() {
 
       <Click>
         <div
-          className="flex flex-col gap-5 justify-between items-center bg-[#040542] text-white shadow rounded-lg mt-4 p-8 hover:scale-105 transition cursor-pointer"
+          className="flex flex-col gap-5 justify-between items-center bg-[#040542] text-white shadow rounded-lg mt-4 p-8 hover:scale-105 transition cursor-pointer relative min-h-64"
           onClick={user ? addTenCoins : error}
         >
-          <Image src="/coin.png" width={200} height={200} alt="coin" />
-          <div className="uppercase italic">
+          {/* <Image
+            src="/coin.png"
+            width={200}
+            height={200}
+            alt="coin"
+            className="select-none"
+          /> */}
+          <div className="bg-coin max-h-64"></div>
+          <div className="uppercase italic mt-64 ">
             {user ? "Click me to earn 10 Coins" : "Login to earn Coins"}
           </div>
         </div>

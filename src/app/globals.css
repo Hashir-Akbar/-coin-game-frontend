@@ -25,3 +25,14 @@
  right: auto;
   left: -50px;
 }
+
+.bg-coin  {
+  background-image: url("/coin.png");
+  background-size: cover;
+  width:257px;
+  height: 100%;
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+}

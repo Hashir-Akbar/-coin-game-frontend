@@ -41,6 +41,13 @@ const Page = () => {
     }
   };
 
+  const formatNumber = (num) => {
+    if (num >= 1000) {
+      return `${num / 1000}K`;
+    }
+    return num;
+  };
+
   const error = () => {
     toast("Not Enough Coins", {
       icon: "❌",
@@ -64,7 +71,8 @@ const Page = () => {
         onClick={() => checkCoin(paypal)}
         className="bg-[#084599] flex items-center gap-2 px-4 py-2 text-sm rounded-lg text-white"
       >
-        {paypal} <Image src="/coin.png" width={20} height={20} alt="coin" />
+        {formatNumber(paypal)}{" "}
+        <Image src="/coin.png" width={20} height={20} alt="coin" />
       </button>
     </Click>
   );
@@ -75,7 +83,8 @@ const Page = () => {
         onClick={() => checkCoin(cashapp)}
         className="bg-[#084599] flex items-center gap-2 px-4 py-2 text-sm rounded-lg text-white"
       >
-        {cashapp} <Image src="/coin.png" width={20} height={20} alt="coin" />
+        {formatNumber(cashapp)}{" "}
+        <Image src="/coin.png" width={20} height={20} alt="coin" />
       </button>
     </Click>
   );
@@ -86,7 +95,8 @@ const Page = () => {
         onClick={() => checkCoin(freefire)}
         className="bg-[#084599] flex items-center gap-2 px-4 py-2 text-sm rounded-lg text-white"
       >
-        {freefire} <Image src="/coin.png" width={20} height={20} alt="coin" />
+        {formatNumber(freefire)}{" "}
+        <Image src="/coin.png" width={20} height={20} alt="coin" />
       </button>
     </Click>
   );
@@ -97,7 +107,8 @@ const Page = () => {
         onClick={() => checkCoin(monopoly)}
         className="bg-[#084599] flex items-center gap-2 px-4 py-2 text-sm rounded-lg text-white"
       >
-        {monopoly} <Image src="/coin.png" width={20} height={20} alt="coin" />
+        {formatNumber(monopoly)}{" "}
+        <Image src="/coin.png" width={20} height={20} alt="coin" />
       </button>
     </Click>
   );
@@ -108,7 +119,8 @@ const Page = () => {
         onClick={() => checkCoin(pubg)}
         className="bg-[#084599] flex items-center gap-2 px-4 py-2 text-sm rounded-lg text-white"
       >
-        {pubg} <Image src="/coin.png" width={20} height={20} alt="coin" />
+        {formatNumber(pubg)}{" "}
+        <Image src="/coin.png" width={20} height={20} alt="coin" />
       </button>
     </Click>
   );
@@ -131,10 +143,6 @@ const Page = () => {
               Check History
             </h2>
           </Link>
-          {/* <div className="flex gap-1 items-center">
-            <Image src="/coin.png" width={30} height={50} alt="coin" />
-            <span className="text-4xl">0</span>
-          </div> */}
         </div>
       </div>
       <span className="w-full mt-8 inline-block h-1 bg-[#04073B]"></span>
