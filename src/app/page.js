@@ -18,8 +18,8 @@ export default function Home() {
   const [coins, setCoins] = useState(null); // Initially set to null
   const [loading, setLoading] = useState(true); // Loading state
 
-  const addTenCoins = () => {
-    setCoins((prevCoins) => prevCoins + 10);
+  const addTwentyCoins = () => {
+    setCoins((prevCoins) => prevCoins + 20);
   };
 
   const handleWinValue = (value) => {
@@ -168,7 +168,7 @@ export default function Home() {
       <Click>
         <div
           className="flex flex-col gap-5 justify-between items-center bg-[#040542] text-white shadow rounded-lg mt-4 p-8 hover:scale-105 transition cursor-pointer relative min-h-64"
-          onClick={user ? addTenCoins : error}
+          onClick={user ? addTwentyCoins : error}
         >
           {/* <Image
             src="/coin.png"
@@ -179,7 +179,7 @@ export default function Home() {
           /> */}
           <div className="bg-coin max-h-64"></div>
           <div className="uppercase italic mt-64 ">
-            {user ? "Click me to earn 10 Coins" : "Login to earn Coins"}
+            {user ? "Click me to earn 20 Coins" : "Login to earn Coins"}
           </div>
         </div>
       </Click>

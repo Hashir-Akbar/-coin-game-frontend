@@ -8,32 +8,36 @@ import toast, { Toaster } from "react-hot-toast";
 
 const data = [
   {
-    option: "0",
-    style: { backgroundColor: "#d49001", textColor: "white", fontSize: 43 },
-  },
-  {
-    option: "1000",
-    style: { backgroundColor: "white", fontSize: 43, textColor: "black" },
-  },
-  {
-    option: "20000",
-    style: { backgroundColor: "yellow", fontSize: 38, textColor: "black" },
+    option: "2000",
+    style: { backgroundColor: "#d49001", textColor: "white", fontSize: 28 },
   },
   {
     option: "5000",
-    style: { backgroundColor: "purple", fontSize: 38, textColor: "white" },
+    style: { backgroundColor: "white", fontSize: 28, textColor: "black" },
+  },
+  {
+    option: "0",
+    style: { backgroundColor: "yellow", fontSize:28, textColor: "black" },
+  },
+  {
+    option: "500",
+    style: { backgroundColor: "purple", fontSize:28, textColor: "white" },
   },
   {
     option: "10000",
-    style: { backgroundColor: "orange", fontSize: 38, textColor: "black" },
+    style: { backgroundColor: "orange", fontSize:28, textColor: "black" },
   },
   {
-    option: "900",
-    style: { backgroundColor: "green", fontSize: 38, textColor: "white" },
+    option: "2500",
+    style: { backgroundColor: "green", fontSize:28, textColor: "white" },
   },
   {
-    option: "100",
-    style: { backgroundColor: "brown", fontSize: 38, textColor: "white" },
+    option: "0",
+    style: { backgroundColor: "brown", fontSize:28, textColor: "white" },
+  },
+  {
+    option: "1000",
+    style: { backgroundColor: "#4889cf", fontSize:28, textColor: "white" },
   },
 ];
 
