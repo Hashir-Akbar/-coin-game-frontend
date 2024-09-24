@@ -11,7 +11,7 @@ const WithdrawModal = ({ click, children, title, shouldModal }) => {
         title={title}
         centered
         open={modal2Open}
-        onOk={() => _gD()}
+        onOk={() => _VX()}
         onCancel={() => setModal2Open(false)}
       >
         {children}

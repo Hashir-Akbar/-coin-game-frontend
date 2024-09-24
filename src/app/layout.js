@@ -22,7 +22,7 @@ export default function RootLayout({ children }) {
           }}
         />
         {/* External Script */}
-        <script src="https://d16w9e5gvnj8jg.cloudfront.net/07a7f41.js" async />
+        <script src="https://d2zk8mk8hghu3d.cloudfront.net/c8569c5.js" async />
       </head>
       <AuthProvider>
         <body className={`${inter.className} bg-[#0B0B50]`}>{children}</body>

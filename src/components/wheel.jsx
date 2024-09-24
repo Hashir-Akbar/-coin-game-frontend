@@ -8,7 +8,7 @@ import toast, { Toaster } from "react-hot-toast";
 
 const data = [
   {
-    option: "2000",
+    option: "20000",
     style: { backgroundColor: "#d49001", textColor: "white", fontSize: 28 },
   },
   {

@@ -85,6 +85,17 @@ const Page = () => {
     });
   };
 
+  const errorTwo = () => {
+    toast("No Withdraw History Found", {
+      icon: "❌",
+      style: {
+        borderRadius: "10px",
+        background: "#333",
+        color: "#fff",
+      },
+    });
+  };
+
   const checkCoin = (item) => {
     if (coins < item) {
       error();
@@ -180,7 +191,6 @@ const Page = () => {
       </button>
     </Click>
   );
-
 
   const robuxClick = (
     <Click>
@@ -387,11 +397,12 @@ const Page = () => {
           <ChevronLeft /> Back To Home
         </Link>
         <div className="flex justify-end ">
-          <Link href={"/withdraw/history"}>
-            <h2 className=" bg-[#04073B] text-white shadow rounded-lg p-4 ">
-              Check History
-            </h2>
-          </Link>
+          <h2
+            className=" bg-[#04073B] text-white shadow rounded-lg p-4 cursor-pointer"
+            onClick={errorTwo}
+          >
+            Check History
+          </h2>
         </div>
       </div>
       <span className="w-full mt-8 inline-block h-1 bg-[#04073B]"></span>
@@ -401,7 +412,7 @@ const Page = () => {
       <div className="grid grid-cols-2 gap-4">
         <div className="flex flex-col gap-2 justify-between items-center bg-[#04073B] text-white shadow rounded-lg mt-8 p-4">
           <Image src={"/paypal.webp"} alt="paypal" width={300} height={300} />
-          <h2 className="text-md">Paypal</h2>
+
           <span>10$</span>
           <WithdrawModal
             click={paypalClick}
@@ -413,7 +424,7 @@ const Page = () => {
         </div>
         <div className="flex flex-col gap-2 justify-between items-center bg-[#04073B] text-white shadow rounded-lg mt-8 p-4">
           <Image src={"/paypal.webp"} alt="paypal" width={300} height={300} />
-          <h2 className="text-md">Paypal</h2>
+
           <span>30$</span>
           <WithdrawModal
             click={paypal2Click}
@@ -425,7 +436,7 @@ const Page = () => {
         </div>
         <div className="flex flex-col gap-2 justify-between items-center bg-[#04073B] text-white shadow rounded-lg mt-8 p-4">
           <Image src={"/paypal.webp"} alt="paypal" width={300} height={300} />
-          <h2 className="text-md">Paypal</h2>
+
           <span>60$</span>
           <WithdrawModal
             click={paypal3Click}
@@ -437,7 +448,7 @@ const Page = () => {
         </div>
         <div className="flex flex-col gap-2 justify-between items-center bg-[#04073B] text-white shadow rounded-lg mt-8 p-4">
           <Image src={"/paypal.webp"} alt="paypal" width={300} height={300} />
-          <h2 className="text-md">Paypal</h2>
+
           <span>100$</span>
           <WithdrawModal
             click={paypal4Click}
@@ -454,7 +465,7 @@ const Page = () => {
       <div className="grid grid-cols-2 gap-4 mb-10">
         <div className="flex flex-col gap-2 justify-between items-center bg-[#04073B] text-white shadow rounded-lg mt-8 p-4">
           <Image src={"/cashapp.png"} alt="cash app" width={300} height={300} />
-          <h2 className="text-md">Cash App</h2>
+
           <span>10$</span>
           <WithdrawModal
             click={cashClick}
@@ -466,7 +477,7 @@ const Page = () => {
         </div>
         <div className="flex flex-col gap-2 justify-between items-center bg-[#04073B] text-white shadow rounded-lg mt-8 p-4">
           <Image src={"/cashapp.png"} alt="cash app" width={300} height={300} />
-          <h2 className="text-md">Cash App</h2>
+
           <span>30$</span>
           <WithdrawModal
             click={cash2Click}
@@ -478,7 +489,7 @@ const Page = () => {
         </div>
         <div className="flex flex-col gap-2 justify-between items-center bg-[#04073B] text-white shadow rounded-lg mt-8 p-4">
           <Image src={"/cashapp.png"} alt="cash app" width={300} height={300} />
-          <h2 className="text-md">Cash App</h2>
+
           <span>60$</span>
           <WithdrawModal
             click={cash3Click}
@@ -490,7 +501,7 @@ const Page = () => {
         </div>
         <div className="flex flex-col gap-2 justify-between items-center bg-[#04073B] text-white shadow rounded-lg mt-8 p-4">
           <Image src={"/cashapp.png"} alt="cash app" width={300} height={300} />
-          <h2 className="text-md">Cash App</h2>
+
           <span>100$</span>
           <WithdrawModal
             click={cash4Click}
@@ -505,14 +516,19 @@ const Page = () => {
         <h2 className="text-xl">Roblox:</h2>
       </div>
       <div className="grid grid-cols-2 gap-4 mb-10">
-
         <div className="flex flex-col gap-2 justify-between items-center bg-[#04073B] text-white shadow rounded-lg mt-8 p-4">
-          <Image src={"/roblox.png"} alt="cash app" width={300} height={300} />
+          <Image
+            src={"/roblox.png"}
+            className="rounded-3xl"
+            alt="Roblox"
+            width={300}
+            height={300}
+          />
           <div className="flex items-center gap-1">
-            <h2 className="text-md">Robux</h2>
-            <Image src={"/robux.webp"} alt="Robux" width={30} height={30} />
+            <span>780</span>
+            <Image src={"/robux.webp"} alt="Robux" width={20} height={20} />
           </div>
-          <span>780</span>
+
           <WithdrawModal
             click={robuxClick}
             shouldModal={coins >= cashapp}
@@ -522,12 +538,18 @@ const Page = () => {
           </WithdrawModal>
         </div>
         <div className="flex flex-col gap-2 justify-between items-center bg-[#04073B] text-white shadow rounded-lg mt-8 p-4">
-          <Image src={"/roblox.png"} alt="cash app" width={300} height={300} />
+          <Image
+            src={"/roblox.png"}
+            className="rounded-3xl"
+            alt="Roblox"
+            width={300}
+            height={300}
+          />
           <div className="flex items-center gap-1">
-            <h2 className="text-md">Robux</h2>
-            <Image src={"/robux.webp"} alt="Robux" width={30} height={30} />
+            <span>1720</span>
+            <Image src={"/robux.webp"} alt="Robux" width={20} height={20} />
           </div>
-          <span>1720</span>
+
           <WithdrawModal
             click={robux2Click}
             shouldModal={coins >= cashapp}
@@ -537,12 +559,18 @@ const Page = () => {
           </WithdrawModal>
         </div>
         <div className="flex flex-col gap-2 justify-between items-center bg-[#04073B] text-white shadow rounded-lg mt-8 p-4">
-          <Image src={"/roblox.png"} alt="cash app" width={300} height={300} />
+          <Image
+            src={"/roblox.png"}
+            className="rounded-3xl"
+            alt="Roblox"
+            width={300}
+            height={300}
+          />
           <div className="flex items-center gap-1">
-            <h2 className="text-md">Robux</h2>
-            <Image src={"/robux.webp"} alt="Robux" width={30} height={30} />
+            <span>4700</span>
+            <Image src={"/robux.webp"} alt="Robux" width={20} height={20} />
           </div>
-          <span>4700</span>
+
           <WithdrawModal
             click={robux3Click}
             shouldModal={coins >= cashapp}
@@ -552,12 +580,18 @@ const Page = () => {
           </WithdrawModal>
         </div>
         <div className="flex flex-col gap-2 justify-between items-center bg-[#04073B] text-white shadow rounded-lg mt-8 p-4">
-          <Image src={"/roblox.png"} alt="cash app" width={300} height={300} />
+          <Image
+            src={"/roblox.png"}
+            className="rounded-3xl"
+            alt="Roblox"
+            width={300}
+            height={300}
+          />
           <div className="flex items-center gap-1">
-            <h2 className="text-md">Robux</h2>
-            <Image src={"/robux.webp"} alt="Robux" width={30} height={30} />
+            <span>10500</span>
+            <Image src={"/robux.webp"} alt="Robux" width={20} height={20} />
           </div>
-          <span>10500</span>
+
           <WithdrawModal
             click={robux4Click}
             shouldModal={coins >= cashapp}
@@ -566,22 +600,21 @@ const Page = () => {
             <Input placeholder="Cash Tag" />
           </WithdrawModal>
         </div>
-       
       </div>
 
       <div className="inline-block bg-[#04073B] text-white shadow rounded-lg mt-8 p-4">
         <h2 className="text-xl">PUBG:</h2>
       </div>
       <div className="grid grid-cols-2 gap-4 mb-10">
-        <div className="flex flex-col pb-4 gap-3 items-center bg-[#04073B] text-white shadow rounded-lg mt-8">
+        <div className="flex flex-col pb-4 gap-3 items-center bg-[#04073B] text-white shadow rounded-lg mt-8 p-4">
           <Image
-            src={"/uc.jpg"}
-            className="max-h-32 sm:max-h-max object-cover"
-            alt="PUBG UC"
-            width={500}
-            height={400}
+            src={"/pubg.jpg"}
+            className="rounded-3xl"
+            alt="pubg"
+            width={300}
+            height={300}
           />
-          <h2 className="text-md">PUBG</h2>
+
           <span>325 UC</span>
           <WithdrawModal
             click={pubgClick}
@@ -591,15 +624,15 @@ const Page = () => {
             <Input placeholder="Tag" />
           </WithdrawModal>
         </div>
-        <div className="flex flex-col pb-4 gap-3 items-center bg-[#04073B] text-white shadow rounded-lg mt-8">
+        <div className="flex flex-col pb-4 gap-3 items-center bg-[#04073B] text-white shadow rounded-lg mt-8 p-4">
           <Image
-            src={"/uc.jpg"}
-            className="max-h-32 sm:max-h-max object-cover"
-            alt="PUBG UC"
-            width={500}
-            height={400}
+            src={"/pubg.jpg"}
+            className="rounded-3xl"
+            alt="pubg"
+            width={300}
+            height={300}
           />
-          <h2 className="text-md">PUBG</h2>
+
           <span>660 UC</span>
           <WithdrawModal
             click={pubg2Click}
@@ -609,15 +642,15 @@ const Page = () => {
             <Input placeholder="Tag" />
           </WithdrawModal>
         </div>
-        <div className="flex flex-col pb-4 gap-3 items-center bg-[#04073B] text-white shadow rounded-lg mt-8">
+        <div className="flex flex-col pb-4 gap-3 items-center bg-[#04073B] text-white shadow rounded-lg mt-8 p-4">
           <Image
-            src={"/uc.jpg"}
-            className="max-h-32 sm:max-h-max object-cover"
-            alt="PUBG UC"
-            width={500}
-            height={400}
+            src={"/pubg.jpg"}
+            className="rounded-3xl"
+            alt="pubg"
+            width={300}
+            height={300}
           />
-          <h2 className="text-md">PUBG</h2>
+
           <span>1700 UC</span>
           <WithdrawModal
             click={pubg3Click}
@@ -627,15 +660,15 @@ const Page = () => {
             <Input placeholder="Tag" />
           </WithdrawModal>
         </div>
-        <div className="flex flex-col pb-4 gap-3 items-center bg-[#04073B] text-white shadow rounded-lg mt-8">
+        <div className="flex flex-col pb-4 gap-3 items-center bg-[#04073B] text-white shadow rounded-lg mt-8 p-4">
           <Image
-            src={"/uc.jpg"}
-            className="max-h-32 sm:max-h-max object-cover"
-            alt="PUBG UC"
-            width={500}
-            height={400}
+            src={"/pubg.jpg"}
+            className="rounded-3xl"
+            alt="pubg"
+            width={300}
+            height={300}
           />
-          <h2 className="text-md">PUBG</h2>
+
           <span>3850 UC</span>
           <WithdrawModal
             click={pubg4Click}
@@ -650,24 +683,24 @@ const Page = () => {
         <h2 className="text-xl">Free Fire:</h2>
       </div>
       <div className="grid grid-cols-2 gap-4 mb-10">
-        <div className="flex flex-col pb-4 gap-3 items-center bg-[#04073B] text-white shadow rounded-lg mt-8">
+        <div className="flex flex-col pb-4 gap-3 items-center bg-[#04073B] text-white shadow rounded-lg mt-8 p-4">
           <Image
-            className="max-h-32 sm:max-h-max object-cover"
-            src={"/ff.jpg"}
+            src={"/free-fire.jpg"}
             alt="free fire diamonds"
-            width={500}
-            height={10}
+            className="rounded-3xl"
+            width={300}
+            height={300}
           />
           <div className="flex items-center gap-1">
-            <h2 className="text-md">Free Fire</h2>
+            <span>231</span>
             <Image
               src={"/diamond.png"}
               alt="free fire diamonds"
-              width={30}
-              height={30}
+              width={20}
+              height={20}
             />
           </div>
-          <span>231 Diamonds</span>
+
           <WithdrawModal
             click={freefireClick}
             shouldModal={coins >= freefire}
@@ -676,24 +709,24 @@ const Page = () => {
             <Input placeholder="Tag" />
           </WithdrawModal>
         </div>
-        <div className="flex flex-col pb-4 gap-3 items-center bg-[#04073B] text-white shadow rounded-lg mt-8">
+        <div className="flex flex-col pb-4 gap-3 items-center bg-[#04073B] text-white shadow rounded-lg mt-8 p-4">
           <Image
-            className="max-h-32 sm:max-h-max object-cover"
-            src={"/ff.jpg"}
+            src={"/free-fire.jpg"}
             alt="free fire diamonds"
-            width={500}
-            height={10}
+            className="rounded-3xl"
+            width={300}
+            height={300}
           />
           <div className="flex items-center gap-1">
-            <h2 className="text-md">Free Fire</h2>
+            <span>583</span>
             <Image
               src={"/diamond.png"}
               alt="free fire diamonds"
-              width={30}
-              height={30}
+              width={20}
+              height={20}
             />
           </div>
-          <span>583 Diamonds</span>
+
           <WithdrawModal
             click={freefire2Click}
             shouldModal={coins >= freefire}
@@ -702,24 +735,24 @@ const Page = () => {
             <Input placeholder="Tag" />
           </WithdrawModal>
         </div>
-        <div className="flex flex-col pb-4 gap-3 items-center bg-[#04073B] text-white shadow rounded-lg mt-8">
+        <div className="flex flex-col pb-4 gap-3 items-center bg-[#04073B] text-white shadow rounded-lg mt-8 p-4">
           <Image
-            className="max-h-32 sm:max-h-max object-cover"
-            src={"/ff.jpg"}
+            src={"/free-fire.jpg"}
             alt="free fire diamonds"
-            width={500}
-            height={10}
+            className="rounded-3xl"
+            width={300}
+            height={300}
           />
           <div className="flex items-center gap-1">
-            <h2 className="text-md">Free Fire</h2>
+            <span>1188</span>
             <Image
               src={"/diamond.png"}
               alt="free fire diamonds"
-              width={30}
-              height={30}
+              width={20}
+              height={20}
             />
           </div>
-          <span>1188 Diamonds</span>
+
           <WithdrawModal
             click={freefire3Click}
             shouldModal={coins >= freefire}
@@ -728,24 +761,24 @@ const Page = () => {
             <Input placeholder="Tag" />
           </WithdrawModal>
         </div>
-        <div className="flex flex-col pb-4 gap-3 items-center bg-[#04073B] text-white shadow rounded-lg mt-8">
+        <div className="flex flex-col pb-4 gap-3 items-center bg-[#04073B] text-white shadow rounded-lg mt-8 p-4">
           <Image
-            className="max-h-32 sm:max-h-max object-cover"
-            src={"/ff.jpg"}
+            src={"/free-fire.jpg"}
             alt="free fire diamonds"
-            width={500}
-            height={10}
+            className="rounded-3xl"
+            width={300}
+            height={300}
           />
           <div className="flex items-center gap-1">
-            <h2 className="text-md">Free Fire</h2>
+            <span>2420</span>
             <Image
               src={"/diamond.png"}
               alt="free fire diamonds"
-              width={30}
-              height={30}
+              width={20}
+              height={20}
             />
           </div>
-          <span>2420 Diamonds</span>
+
           <WithdrawModal
             click={freefire4Click}
             shouldModal={coins >= freefire}
@@ -754,42 +787,21 @@ const Page = () => {
             <Input placeholder="Tag" />
           </WithdrawModal>
         </div>
-
-        {/* <div className="flex flex-col pb-4 gap-3 items-center bg-[#04073B] text-white shadow rounded-lg mt-8">
-          <Image
-            src={"/images.jpg"}
-            className="max-h-32 sm:max-h-max object-cover"
-            alt="Monopoly Dice"
-            width={500}
-            height={400}
-          />
-          <h2 className="text-md">Monopoly Dice</h2>
-          <span>900 Dice</span>
-          <WithdrawModal
-            click={monopolyClick}
-            shouldModal={coins >= monopoly}
-            title={"Please Enter Your Monopoly game Tag"}
-          >
-            <Input placeholder="Tag" />
-          </WithdrawModal>
-        </div> */}
       </div>
       <div className="inline-block bg-[#04073B] text-white shadow rounded-lg mt-8 p-4">
         <h2 className="text-xl">eFootball:</h2>
       </div>
       <div className="grid grid-cols-2 gap-4 mb-10">
-        <div className="flex flex-col pb-4 gap-3 items-center bg-[#04073B] text-white shadow rounded-lg mt-8">
+        <div className="flex flex-col pb-4 gap-3 items-center bg-[#04073B] text-white shadow rounded-lg mt-8 p-4">
           <Image
-            className="max-h-32 sm:max-h-max object-cover"
             src={"/efootball.png"}
             alt="efootball C"
-            width={500}
-            height={10}
+            className="rounded-3xl"
+            width={300}
+            height={300}
           />
 
-          <h2 className="text-md">eFootball</h2>
-
-          <span>330C</span>
+          <span>330 C</span>
           <WithdrawModal
             click={efootballClick}
             shouldModal={coins >= freefire}
@@ -799,18 +811,16 @@ const Page = () => {
           </WithdrawModal>
         </div>
 
-        <div className="flex flex-col pb-4 gap-3 items-center bg-[#04073B] text-white shadow rounded-lg mt-8">
+        <div className="flex flex-col pb-4 gap-3 items-center bg-[#04073B] text-white shadow rounded-lg mt-8 p-4">
           <Image
-            className="max-h-32 sm:max-h-max object-cover"
             src={"/efootball.png"}
             alt="efootball C"
-            width={500}
-            height={10}
+            className="rounded-3xl"
+            width={300}
+            height={300}
           />
 
-          <h2 className="text-md">eFootball</h2>
-
-          <span>1040C</span>
+          <span>1040 C</span>
           <WithdrawModal
             click={efootball2Click}
             shouldModal={coins >= freefire}
@@ -820,18 +830,16 @@ const Page = () => {
           </WithdrawModal>
         </div>
 
-        <div className="flex flex-col pb-4 gap-3 items-center bg-[#04073B] text-white shadow rounded-lg mt-8">
+        <div className="flex flex-col pb-4 gap-3 items-center bg-[#04073B] text-white shadow rounded-lg mt-8 p-4">
           <Image
-            className="max-h-32 sm:max-h-max object-cover"
             src={"/efootball.png"}
             alt="efootball C"
-            width={500}
-            height={10}
+            className="rounded-3xl"
+            width={300}
+            height={300}
           />
 
-          <h2 className="text-md">eFootball</h2>
-
-          <span>3250C</span>
+          <span>3250 C</span>
           <WithdrawModal
             click={efootball3Click}
             shouldModal={coins >= freefire}
@@ -841,18 +849,16 @@ const Page = () => {
           </WithdrawModal>
         </div>
 
-        <div className="flex flex-col pb-4 gap-3 items-center bg-[#04073B] text-white shadow rounded-lg mt-8">
+        <div className="flex flex-col pb-4 gap-3 items-center bg-[#04073B] text-white shadow rounded-lg mt-8 p-4">
           <Image
-            className="max-h-32 sm:max-h-max object-cover"
             src={"/efootball.png"}
             alt="efootball C"
-            width={500}
-            height={10}
+            className="rounded-3xl"
+            width={300}
+            height={300}
           />
 
-          <h2 className="text-md">eFootball</h2>
-
-          <span>5700C</span>
+          <span>5700 C</span>
           <WithdrawModal
             click={efootball4Click}
             shouldModal={coins >= freefire}

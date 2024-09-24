@@ -49,12 +49,13 @@ const Page = () => {
         <div className="flex justify-between items-center shadow  p-2 ">
           <div className="flex gap-2 items-center">
             <Image
-              src="/uc.png"
+              src="/pubg.jpg"
               width={40}
+                  className="rounded-lg"
               height={40}
               alt="withdraw history"
             />
-            <span>325UC</span>
+            <span>325 UC</span>
           </div>
           <button className="bg-green-700 py-2 px-4 rounded-lg">Paid</button>
         </div>
@@ -64,9 +65,10 @@ const Page = () => {
               src="/efootball.png"
               width={40}
               height={40}
+              className="rounded-lg"
               alt="withdraw history"
             />
-            <span>550C</span>
+            <span>550 C</span>
           </div>
           <button className="bg-green-700 py-2 px-4 rounded-lg">Paid</button>
         </div>
