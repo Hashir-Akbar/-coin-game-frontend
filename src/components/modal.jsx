@@ -19,4 +19,6 @@ const WithdrawModal = ({ click, children, title, shouldModal }) => {
     </>
   );
 };
+
+
 export default WithdrawModal;
