@@ -16,6 +16,7 @@ const WithdrawModal = ({ click, children, title, shouldModal }) => {
       >
         {children}
       </Modal>
+      
     </>
   );
 };
